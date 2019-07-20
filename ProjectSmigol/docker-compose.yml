@@ -1,0 +1,17 @@
+version: "3.2"
+services:
+  app_server1:
+    image: httpd
+    ports: 
+       - 8081:80
+
+  app_server2:
+    image: httpd       
+    ports:
+       - 8082:80
+ 
+  nginx:
+    image: nginx
+    ports:
+       - 85:80
+ 
