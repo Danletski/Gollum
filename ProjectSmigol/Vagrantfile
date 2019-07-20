@@ -1,6 +1,5 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
-  config.vm.provision "docker" do |d|
   config.vm.synced_folder "./", "/etc/ansible"
   config.vm.network "private_network", type: "dhcp"
   config.vm.provider "virtualbox" do |v|
@@ -12,6 +11,8 @@ Vagrant.configure("2") do |config|
      apt-get install -y software-properties-common
      apt-add-repository ppa:ansible/ansible
      apt-get install -y ansible
+     apt-get install docker-ce docker-ce-cli containerd.io
+     apt-get install docker-compose
      sudo dpkg --configure -a
    SHELL
   end
