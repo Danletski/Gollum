@@ -3,7 +3,7 @@
 Instuctions:
 #Pull the folder
 
-  Run "vagrant up" inside the project folder the Vagrant file.
+  Run "vagrant up" inside the project folder (Where the Vagrant file is found).
 #The Vagrant folder should be mounted inside the Vagrant host to /etc/ansible.
 #SSh to the vagrant host:
   "vagrant ssh"
