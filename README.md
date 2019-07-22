@@ -15,41 +15,4 @@ Instuctions:
 #Run the test Script testall.py
 The script will return if the proxy + the 2 web servers reply or not.
 
-#Run using Jenkins Pipeline:
-
-Jenkins Pipeline.
-
-pipeline {
-	agent any
-	stages {
-	    stage ('Pull') {
-			steps {
-				git 'https://github.com/Danletski/Gollum.git'
-			}
-		}
-		stage ('Deploy Vagrant') {
-			steps {
-				sh 'sudo vagrant --verbose up -d'
-			}
-		}
-		stage ('Deploy Docker web_apps') {
-			steps {
-				sh 'vagrant ssh'
-				sh 'cd /etc/ansible/'
-				sh 'sudo docker-compose up -d'
-			}
-		}
-		stage ('Test') {
-			steps {
-			    sh 'sudo chmod +x testall.py'
-				sh 'sudo python testall.py'
-			}
-		}
-		stage ('Stop') {
-		    steps {
-		        sh 'exit'
-		        sh 'vagrant destroy -y'
-		    }
-		}
-	}
-}
+Jenkins Pipeline File available in the folder.
