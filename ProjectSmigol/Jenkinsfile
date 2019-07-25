@@ -13,7 +13,6 @@ pipeline {
 				sh 'sudo vagrant plugin install vagrant-docker-compose'
 				sh 'sudo vagrant --verbose up -d'
 			}
-	
 		}
 		stage ('Test') {
 			steps {
