@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "minimum/ubuntu-trusty64-docker"
-  config.vm.box_version = "1.0.5"
+  config.vm.box_version = "1.0.4"
   config.vm.synced_folder "./", "/etc/ansible"
   config.vm.network "public_network", 
     use_dhcp_assigned_default_route: true
