@@ -10,7 +10,7 @@ pipeline {
 		}
 		stage ('Deploy Vagrant') {
 			steps {
-				sh 'sudo vagrant --verbose up -d'
+				sh 'sudo vagrant up -d'
 			}
 		}
 		stage ('Test') {
