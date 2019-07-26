@@ -17,8 +17,8 @@ pipeline {
 			steps {
 				sh 'vagrant ssh'
 				sh 'cd /etc/ansible/'
-			        sh 'sudo chmod +x testall.py'
-				sh 'sudo python testall.py'
+			        sh 'sudo chmod 775 testall.py'
+				sh 'sudo python3 testall.py'
 			}
 		}
 		stage ('Stop') {
